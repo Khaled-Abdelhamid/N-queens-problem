@@ -8,17 +8,11 @@ Email : s-khaled.usama@zewailcirty.edu.eg
 
 
 
-## Table of contents
-
-[TOC]
-
-
-
 ## Problem statement
 
 
 
-The N queens problem is a very important ,and is the main example given when trying to introduce back tracking. The problem goes as follows. You have  $N \times N$ chess board and you have N queens , you have to put the $N$ queens over the board without any one of them threating the others. To imagine the number of different combinations for an $8 \times 8$ board , the number of combinations are $64 \choose 8$ , which is equivalent to 4,426,165,368 different states. Hence, finding the solution of the problem suing brute force will not be very efficient ,especially for large numbers of $N$ .
+The N queens problem is a very important ,and is the main example given when trying to introduce back tracking. The problem goes as follows. You have  N x N chess board and you have N queens , you have to put the N queens over the board without any one of them threating the others. To imagine the number of different combinations for an 8 X 8 board , the number of combinations are 64C8 , which is equivalent to 4,426,165,368 different states. Hence, finding the solution of the problem suing brute force will not be very efficient ,especially for large numbers of N .
 
 <img src="README.assets/1_SVCP2lIp1jfzJuQn_QUeVg.png" style="margin-left: auto; margin-right: auto; display: block;">
 
@@ -91,23 +85,23 @@ Here are the interesting observations in the solutions. Note that the queens are
 
 ### Naive solutions
 
-#### $N=0$
+#### N = 0
 
 simply the solution will be an empty array ` []` and that is a single unique solution, as the only solution for not board nor queen situation is just not placing anything at all 
 
-#### $N=1$
+#### N = 1
 
-Almost similar to the previous case. having a board with the size $1 \times 1$ and one queen would give us a single solution, which is putting the queen in the empty spot `[1]`
+Almost similar to the previous case. having a board with the size 1 X 1 and one queen would give us a single solution, which is putting the queen in the empty spot `[1]`
 
 ### Impossible cases
 
-#### $N=2$ and $N=3$
+#### N = 2 and N = 3
 
 These cases are impossible to handle because once we put one queen , no other empty square will be protected from its threat.
 
 ### Multi-solution cases
 
-#### $N >= 4$
+#### N >= 4
 
 All cases above grantees to have multiple solutions. The abundance of the solution comes from two sources. either by having fundamentally different solutions or a reflection or rotation variation from the main solution. Hence , we can deduce that for each solution we have at most 8 different sub-solutions (four for rotations and 2 for reflection).However some solutions have less than 8 sub-solutions, which comes from the fact that the solution has an axis of symmetry over the board which reduces the number of solution by half or also the rotation action outputs a similar configuration which reduces the sub-solutions more.
 
